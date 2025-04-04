@@ -1,18 +1,18 @@
+import { db } from "@/server/db";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import DiscordProvider from "next-auth/providers/discord";
 import Google from "next-auth/providers/google";
-import { db } from "@/server/db";
 
-import { eq } from "drizzle-orm";
-import { v4 as uuidv4 } from "uuid";
 import {
   accounts,
   sessions,
   users,
   verificationTokens,
 } from "@/server/db/schema/index";
+import { eq } from "drizzle-orm";
+import { v4 as uuidv4 } from "uuid";
 import { z } from "zod";
 
 /**
@@ -117,7 +117,7 @@ export const authConfig = {
               httpOnly: true,
               sameSite: "lax",
               path: "/",
-              domain: ".t3-template.com",
+              domain: ".launch-kit.com",
               secure: true,
             },
           },

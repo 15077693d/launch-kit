@@ -7,8 +7,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "t3-template",
-  description: "t3-template",
+  title: "launch-kit",
+  description: "launch-kit",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 export default function RootLayout({

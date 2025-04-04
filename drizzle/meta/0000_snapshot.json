@@ -4,8 +4,8 @@
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.t3-template_account": {
-      "name": "t3-template_account",
+    "public.launch-kit_account": {
+      "name": "launch-kit_account",
       "schema": "",
       "columns": {
         "userId": {
@@ -93,27 +93,20 @@
         }
       },
       "foreignKeys": {
-        "t3-template_account_userId_t3-template_user_id_fk": {
-          "name": "t3-template_account_userId_t3-template_user_id_fk",
-          "tableFrom": "t3-template_account",
-          "tableTo": "t3-template_user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+        "launch-kit_account_userId_launch-kit_user_id_fk": {
+          "name": "launch-kit_account_userId_launch-kit_user_id_fk",
+          "tableFrom": "launch-kit_account",
+          "tableTo": "launch-kit_user",
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {
-        "t3-template_account_provider_providerAccountId_pk": {
-          "name": "t3-template_account_provider_providerAccountId_pk",
-          "columns": [
-            "provider",
-            "providerAccountId"
-          ]
+        "launch-kit_account_provider_providerAccountId_pk": {
+          "name": "launch-kit_account_provider_providerAccountId_pk",
+          "columns": ["provider", "providerAccountId"]
         }
       },
       "uniqueConstraints": {},
@@ -121,8 +114,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.t3-template_post": {
-      "name": "t3-template_post",
+    "public.launch-kit_post": {
+      "name": "launch-kit_post",
       "schema": "",
       "columns": {
         "id": {
@@ -132,7 +125,7 @@
           "notNull": true,
           "identity": {
             "type": "byDefault",
-            "name": "t3-template_post_id_seq",
+            "name": "launch-kit_post_id_seq",
             "schema": "public",
             "increment": "1",
             "startWith": "1",
@@ -201,16 +194,12 @@
         }
       },
       "foreignKeys": {
-        "t3-template_post_createdById_t3-template_user_id_fk": {
-          "name": "t3-template_post_createdById_t3-template_user_id_fk",
-          "tableFrom": "t3-template_post",
-          "tableTo": "t3-template_user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+        "launch-kit_post_createdById_launch-kit_user_id_fk": {
+          "name": "launch-kit_post_createdById_launch-kit_user_id_fk",
+          "tableFrom": "launch-kit_post",
+          "tableTo": "launch-kit_user",
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -221,8 +210,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.t3-template_session": {
-      "name": "t3-template_session",
+    "public.launch-kit_session": {
+      "name": "launch-kit_session",
       "schema": "",
       "columns": {
         "sessionToken": {
@@ -262,16 +251,12 @@
         }
       },
       "foreignKeys": {
-        "t3-template_session_userId_t3-template_user_id_fk": {
-          "name": "t3-template_session_userId_t3-template_user_id_fk",
-          "tableFrom": "t3-template_session",
-          "tableTo": "t3-template_user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+        "launch-kit_session_userId_launch-kit_user_id_fk": {
+          "name": "launch-kit_session_userId_launch-kit_user_id_fk",
+          "tableFrom": "launch-kit_session",
+          "tableTo": "launch-kit_user",
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -282,8 +267,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.t3-template_user": {
-      "name": "t3-template_user",
+    "public.launch-kit_user": {
+      "name": "launch-kit_user",
       "schema": "",
       "columns": {
         "id": {
@@ -326,8 +311,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.t3-template_verification_token": {
-      "name": "t3-template_verification_token",
+    "public.launch-kit_verification_token": {
+      "name": "launch-kit_verification_token",
       "schema": "",
       "columns": {
         "identifier": {
@@ -352,12 +337,9 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "t3-template_verification_token_identifier_token_pk": {
-          "name": "t3-template_verification_token_identifier_token_pk",
-          "columns": [
-            "identifier",
-            "token"
-          ]
+        "launch-kit_verification_token_identifier_token_pk": {
+          "name": "launch-kit_verification_token_identifier_token_pk",
+          "columns": ["identifier", "token"]
         }
       },
       "uniqueConstraints": {},

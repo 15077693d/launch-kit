@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "t3-template",
+    "appName": "launch-kit",
     "signInRequired": "Sign in required to continue",
     "loading": "Loading"
   },
@@ -13,7 +13,7 @@
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
     "contactUs": "Contact Us",
-    "copyright": "© {year} t3-template. All rights reserved."
+    "copyright": "© {year} launch-kit. All rights reserved."
   },
   "loading": "Loading",
   "navigation": {
