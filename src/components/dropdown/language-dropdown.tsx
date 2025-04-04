@@ -1,34 +1,25 @@
 "use client";
 
-import { locales } from "@/i18n/routing";
-import { Globe } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { locales } from "@/i18n/routing";
+import { Globe } from "lucide-react";
+import { useLocale } from "next-intl";
 
-export function LanguageSwitcher() {
-  const pathname = usePathname();
+export function LanguageDropdown() {
   const router = useRouter();
-
-  // Simple locale detection from URL
-  const currentLocale = pathname.startsWith("/zh") ? "zh" : "en";
-
-  // Get the path without the locale prefix
-  let pathnameWithoutLocale = pathname.replace(`/${currentLocale}`, "") || "/";
-
-  // Ensure the path starts with a slash
-  if (!pathnameWithoutLocale.startsWith("/")) {
-    pathnameWithoutLocale = "/" + pathnameWithoutLocale;
-  }
+  const locale = useLocale();
+  const pathname = usePathname();
 
   const handleLocaleChange = (newLocale: string) => {
     // Navigate to the same page but with a different locale
-    router.push(`/${newLocale}${pathnameWithoutLocale}`);
+    router.push(pathname, { locale: newLocale });
   };
 
   return (
@@ -44,7 +35,7 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={l}
             onClick={() => handleLocaleChange(l)}
-            className={l === currentLocale ? "bg-accent" : ""}
+            className={l === locale ? "bg-accent" : ""}
           >
             {l === "en" ? "English" : "繁體中文"}
           </DropdownMenuItem>

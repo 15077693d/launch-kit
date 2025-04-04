@@ -1,8 +1,23 @@
 {
-  "appName": "t3-template",
+  "common": {
+    "appName": "t3-template",
+    "signInRequired": "Sign in required to continue",
+    "loading": "Loading"
+  },
+  "banner": {
+    "testVersion": "Test version",
+    "contactEmail": "Contact us at {email}"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "contactUs": "Contact Us",
+    "copyright": "© {year} t3-template. All rights reserved."
+  },
+  "loading": "Loading",
   "navigation": {
     "home": "Home",
-    "timetable": "Timetable",
     "userAvatar": "User avatar",
     "signOut": "Sign out",
     "signIn": "Sign in"
@@ -31,5 +46,21 @@
     "description": "Could not find requested resource",
     "redirecting": "Redirecting to home page in {count} seconds...",
     "returnHome": "Return Home Now"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "example@example.com",
+    "passwordPlaceholder": "••••••••",
+    "enterCredentials": "Enter your credentials to sign in to your account",
+    "signingIn": "Signing in...",
+    "signInSuccess": "Signed in successfully",
+    "signInError": "Failed to sign in",
+    "invalidCredentials": "Invalid email or password",
+    "orContinueWith": "or continue with",
+    "google": "Google",
+    "discord": "Discord"
   }
 }

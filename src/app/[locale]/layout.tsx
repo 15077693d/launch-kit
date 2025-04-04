@@ -1,3 +1,5 @@
+import { LoginDialogWrapper } from "@/components/dialog/login-dialog/wrapper";
+import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { routing } from "@/i18n/routing";
 import { TRPCReactProvider } from "@/trpc/react";
@@ -62,8 +64,10 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <LoginDialogWrapper />
             <Navbar />
             <main className="container mx-auto px-4">{children}</main>
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
         <Toaster />
