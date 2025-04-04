@@ -1,0 +1,35 @@
+{
+  "appName": "t3-template",
+  "navigation": {
+    "home": "Home",
+    "timetable": "Timetable",
+    "userAvatar": "User avatar",
+    "signOut": "Sign out",
+    "signIn": "Sign in"
+  },
+  "home": {
+    "heroDescription": "heroDescription",
+    "cardTitle1": "cardTitle1",
+    "cardDescription1": "cardDescription1",
+    "cardTitle2": "cardTitle2",
+    "cardDescription2": "cardDescription2",
+    "cardTitle3": "cardTitle3",
+    "cardDescription3": "cardDescription3",
+    "howItWorks": "howItWorks",
+    "button": "button",
+    "readyToStart": "readyToStart",
+    "ctaDescription": "ctaDescription"
+  },
+  "error": {
+    "title": "Something went wrong!",
+    "description": "We apologize for the inconvenience. Please try again or return to the home page.",
+    "tryAgain": "Try again",
+    "returnHome": "Return Home"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Could not find requested resource",
+    "redirecting": "Redirecting to home page in {count} seconds...",
+    "returnHome": "Return Home Now"
+  }
+}
