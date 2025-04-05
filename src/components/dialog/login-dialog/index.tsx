@@ -63,7 +63,7 @@ const socialProviders = [
         />
       </svg>
     ),
-  },
+  }
   // {
   //   id: "discord",
   //   name: "auth.discord",
