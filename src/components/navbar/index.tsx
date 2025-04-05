@@ -4,11 +4,9 @@ import { LanguageDropdown } from "@/components/dropdown/language-dropdown";
 import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
 import { HIDDEN_BANNER_PREFIX, HIDDEN_NAV_PREFIX } from "@/lib/constants";
-import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 
 export function Navbar() {
-  const session = useSession();
   const pathname = usePathname();
   const tNav = useTranslations("navigation");
   const tBanner = useTranslations("banner");
@@ -43,9 +41,7 @@ export function Navbar() {
               <Link
                 href={"/"}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname.split("/").length === 2
-                    ? "text-foreground"
-                    : "text-muted-foreground"
+                  pathname === "/" ? "text-foreground" : "text-muted-foreground"
                 }`}
               >
                 {tNav("home")}
