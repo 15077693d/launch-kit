@@ -678,3 +678,35 @@ This rule extends to all array iteration methods including `map`, `forEach`, `fi
 
     This approach aligns with our existing practices for type safety, code organization, and maintainability.
 
+  
+19. Never code without understanding the problem and solution:
+   - Before implementing any code, ensure you fully understand both the problem and the solution
+   - Take time to analyze requirements and consider edge cases before writing code
+   - Ask clarifying questions when requirements are unclear rather than making assumptions
+   - Only proceed with implementation when you have a clear mental model of what you're building
+   - Wait for explicit instruction to code if you're unsure about the approach
+   
+   Example workflow:
+   ```
+   // GOOD
+   1. Receive feature request
+   2. Analyze requirements and identify potential issues
+   3. Ask clarifying questions if needed
+   4. Formulate a clear solution approach
+   5. Confirm understanding before implementation
+   6. Implement the solution
+   
+   // BAD
+   1. Receive feature request
+   2. Immediately start coding based on initial assumptions
+   3. Encounter problems due to misunderstanding requirements
+   4. Need to refactor or rewrite code completely
+   ```
+   
+   Benefits:
+   - Reduces wasted time from implementing incorrect solutions
+   - Prevents bugs caused by misunderstood requirements
+   - Leads to cleaner, more maintainable code
+   - Improves overall code quality and developer efficiency
+   - Creates a better collaborative environment by promoting clear communication 
+
