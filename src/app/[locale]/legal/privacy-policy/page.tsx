@@ -112,19 +112,6 @@ export default function PrivacyPolicyPage() {
             <li>Pages visited and interactions</li>
             <li>Geographic location</li>
           </ul>
-          <p>We partner with the following advertising networks:</p>
-          <ul className="list-disc pl-6 mb-4">
-            <li>
-              [Ad Network Name] -{" "}
-              <a
-                href="https://example.com/privacy"
-                className="text-primary hover:underline"
-              >
-                Privacy Policy
-              </a>
-            </li>
-            {/* Add all ad networks you use */}
-          </ul>
         </section>
 
         <section className="mb-8">
@@ -268,7 +255,7 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this Privacy Policy, please contact
             us at:
           </p>
-          <p>Email: osacryiu.lap@gmail.com</p>
+          <p>Email: osacryiu.lapsang@gmail.com</p>
         </section>
       </div>
     </div>

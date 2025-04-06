@@ -275,7 +275,7 @@ export default function CookiePolicyPage() {
             If you have any questions about our use of cookies or other
             technologies, please contact us at:
           </p>
-          <p>Email: osacryiu.lap@gmail.com</p>
+          <p>Email: osacryiu.lapsang@gmail.com</p>
         </section>
       </div>
     </div>
