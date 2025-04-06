@@ -3,9 +3,6 @@ import { devtools } from "zustand/middleware";
 // First define an enum for all dialog types
 export enum DialogId {
   LOGIN = "login",
-  SIGNUP = "signup",
-  SETTINGS = "settings",
-  CONFIRMATION = "confirmation",
   // Add other dialogs as needed
 }
 
@@ -30,8 +27,6 @@ export const useDialogStore = create<DialogStore>()(
     (set) => ({
       dialogs: {
         [DialogId.LOGIN]: { isOpen: false, disableClose: false },
-        [DialogId.SIGNUP]: { isOpen: false, disableClose: false },
-        // Initialize other dialogs with default state
       },
 
       openDialog: (dialogId) =>
