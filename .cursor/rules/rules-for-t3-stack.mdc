@@ -710,3 +710,31 @@ This rule extends to all array iteration methods including `map`, `forEach`, `fi
    - Improves overall code quality and developer efficiency
    - Creates a better collaborative environment by promoting clear communication 
 
+19. Always use pnpm as the package manager:
+   - Never use npm or yarn for package management operations
+   - All dependencies must be installed using pnpm commands
+   - Use pnpm-specific features like workspace management when applicable
+   - Maintain the pnpm-lock.yaml file in version control
+   - Run scripts through pnpm (e.g., `pnpm dev` instead of `npm run dev`)
+   
+   Example:
+   ```bash
+   # GOOD
+   pnpm add react-hook-form
+   pnpm add -D @types/node
+   pnpm dev
+   pnpm build
+   
+   # BAD
+   npm install react-hook-form
+   yarn add @types/node --dev
+   npm run dev
+   yarn build
+   ```
+   
+   Benefits:
+   - Maintains consistent dependency resolution across the team
+   - Leverages pnpm's disk space efficiency through content-addressable storage
+   - Provides faster installation times compared to npm or yarn
+   - Prevents "phantom dependencies" through strict dependency management
+   - Ensures compatibility with the project's lock file and workspace configuration
