@@ -1,11 +1,12 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 import { ROUTE_INFOS } from "@/lib/constants/route";
 import { cn } from "@/lib/utils";
-import { Badge, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function HomePage() {
