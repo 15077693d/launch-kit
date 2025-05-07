@@ -4,13 +4,15 @@ import { LanguageDropdown } from "@/components/dropdown/language-dropdown";
 import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
 import { HIDDEN_BANNER_PREFIX, HIDDEN_NAV_PREFIX } from "@/lib/constants";
+import { ROUTE_INFOS } from "@/lib/constants/route";
 import { useTranslations } from "next-intl";
+import { MenuDrawer } from "../drawer/menu-drawer";
 
 export function Navbar() {
   const pathname = usePathname();
-  const tNav = useTranslations("navigation");
   const tBanner = useTranslations("banner");
   const tCommon = useTranslations("common");
+  const tRoute = useTranslations("route");
   if (HIDDEN_NAV_PREFIX.some((prefix) => pathname.includes(prefix))) {
     return null;
   }
@@ -31,6 +33,7 @@ export function Navbar() {
       <header className="bg-background narbar">
         <div className="container flex h-16 items-center justify-between px-4 m-auto">
           <div className="flex items-center gap-6 md:gap-10">
+            <MenuDrawer />
             <Link
               href="/"
               className="font-bold text-xl flex items-center gap-1"
@@ -38,14 +41,19 @@ export function Navbar() {
               {tCommon("appName")}
             </Link>
             <nav className="hidden md:flex gap-6">
-              <Link
-                href={"/"}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === "/" ? "text-foreground" : "text-muted-foreground"
-                }`}
-              >
-                {tNav("home")}
-              </Link>
+              {Object.entries(ROUTE_INFOS).map(([key, info]) => (
+                <Link
+                  key={key}
+                  href={info.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    pathname === "/"
+                      ? "text-foreground"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {tRoute(key)}
+                </Link>
+              ))}
             </nav>
           </div>
           <div className="flex items-center gap-2">

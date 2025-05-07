@@ -1,4 +1,7 @@
 {
+  "route": {
+    "home": "首頁"
+  },
   "footer": {
     "privacyPolicy": "隱私政策",
     "termsOfService": "服務條款",

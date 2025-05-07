@@ -1,4 +1,7 @@
 {
+  "route": {
+    "home": "Home"
+  },
   "common": {
     "appName": "launch-kit",
     "signInRequired": "Sign in required to continue",
