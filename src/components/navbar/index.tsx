@@ -30,33 +30,29 @@ export function Navbar() {
           </a>
         </div>
       )}
-      <header className="bg-background narbar">
-        <div className="container flex h-16 items-center justify-between px-4 m-auto">
-          <div className="flex items-center gap-6 md:gap-10">
-            <MenuDrawer />
-            <Link
-              href="/"
-              className="font-bold text-xl flex items-center gap-1"
-            >
-              {tCommon("appName")}
-            </Link>
-            <nav className="hidden md:flex gap-6">
-              {Object.entries(ROUTE_INFOS).map(([key, info]) => (
+      <header className="bg-background narbar px-4 container mx-auto">
+        <div className="grid h-14 grid-cols-3 justify-between items-center mx-auto container">
+          <MenuDrawer />
+          <Link href="/" className="font-bold text-xl flex items-center gap-1">
+            {tCommon("appName")}
+          </Link>
+          <nav className="hidden md:flex gap-6 justify-center">
+            {Object.entries(ROUTE_INFOS).map(([key, info]) => {
+              const isActive = pathname === info.href;
+              return (
                 <Link
                   key={key}
                   href={info.href}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
-                    pathname === "/"
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                    isActive ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
-                  {tRoute(key)}
+                  {tRoute(`${key}.title`)}
                 </Link>
-              ))}
-            </nav>
-          </div>
-          <div className="flex items-center gap-2">
+              );
+            })}
+          </nav>{" "}
+          <div className="flex items-center gap-2 justify-end gap-x-2">
             <ThemeToggle />
             <LanguageDropdown />
             <AvatarDropdown />

@@ -20,7 +20,7 @@ export function MenuDrawer() {
       <DrawerContent className="min-h-[250px] overflow-auto p-6">
         {Object.entries(ROUTE_INFOS).map(([key, info]) => (
           <Link className="text-lg font-medium py-3" key={key} href={info.href}>
-            {tRoute(key)}
+            {tRoute(`${key}.title`)}
           </Link>
         ))}
       </DrawerContent>

@@ -1,6 +1,13 @@
 {
   "route": {
-    "home": "Home"
+    "home": {
+      "title": "Home",
+      "description": "Home"
+    },
+    "protected": {
+      "title": "Protected",
+      "description": "Protected"
+    }
   },
   "common": {
     "appName": "launch-kit",
