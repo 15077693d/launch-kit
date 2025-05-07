@@ -31,7 +31,11 @@ export function Navbar() {
         </div>
       )}
       <header className="bg-background narbar px-4 container mx-auto">
-        <div className="grid h-14 grid-cols-3 justify-between items-center mx-auto container">
+        <div
+          className={
+            "flex md:grid h-14 grid-cols-3 justify-between items-center mx-auto container"
+          }
+        >
           <MenuDrawer />
           <Link href="/" className="font-bold text-xl flex items-center gap-1">
             {tCommon("appName")}
