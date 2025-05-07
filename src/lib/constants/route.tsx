@@ -12,6 +12,7 @@ export const ROUTE_INFOS: Record<
     isProtected: boolean;
     isShowInHome: boolean;
     isShowInNav: boolean;
+    isShowInDrawer: boolean;
   }
 > = {
   [ROUTE_ID.HOME]: {
@@ -21,6 +22,7 @@ export const ROUTE_INFOS: Record<
     isProtected: false,
     isShowInHome: true,
     isShowInNav: true,
+    isShowInDrawer: true,
   },
   [ROUTE_ID.PROTECTED]: {
     icon: undefined,
@@ -29,5 +31,6 @@ export const ROUTE_INFOS: Record<
     isProtected: true,
     isShowInHome: false,
     isShowInNav: true,
+    isShowInDrawer: true,
   },
 };
