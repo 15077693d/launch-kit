@@ -5,10 +5,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "@/i18n/navigation";
-import { ROUTE_INFOS } from "@/lib/constants/route";
+import { ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import RouteLink from "../link/route-link";
 
 export function MenuDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,15 +32,28 @@ export function MenuDrawer() {
       >
         {Object.entries(ROUTE_INFOS)
           .filter(([_, info]) => info.isShowInDrawer)
-          .map(([key, info]) => (
-            <Link
-              className="text-lg font-medium py-3"
-              key={key}
-              href={info.href}
-            >
-              {tRoute(`${key}.title`)}
-            </Link>
-          ))}
+          .map(([key, info]) => {
+            if (info.isProtected) {
+              return (
+                <RouteLink
+                  key={key}
+                  routeId={key as ROUTE_ID}
+                  className="text-lg font-medium py-3"
+                >
+                  {tRoute(`${key}.title`)}
+                </RouteLink>
+              );
+            }
+            return (
+              <Link
+                key={key}
+                href={info.href}
+                className="text-lg font-medium py-3"
+              >
+                {tRoute(`${key}.title`)}
+              </Link>
+            );
+          })}
       </DrawerContent>
     </Drawer>
   );
