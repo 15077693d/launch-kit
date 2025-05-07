@@ -13,7 +13,7 @@ export function MenuDrawer() {
   const tRoute = useTranslations("route");
   return (
     <Drawer>
-      <DrawerTrigger className="md:hidden cursor-pointer">
+      <DrawerTrigger className=" cursor-pointer">
         <Menu width={24} height={24} />
       </DrawerTrigger>
       <DrawerTitle className="hidden">Menu</DrawerTitle>

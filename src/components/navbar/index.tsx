@@ -36,8 +36,16 @@ export function Navbar() {
             "flex md:grid h-14 grid-cols-3 justify-between items-center mx-auto container"
           }
         >
-          <MenuDrawer />
-          <Link href="/" className="font-bold text-xl flex items-center gap-1">
+          <div className="md:hidden flex items-center gap-3">
+            <MenuDrawer />
+            <Link href="/" className="font-bold text-xl flex items-center ">
+              {tCommon("appName")}
+            </Link>
+          </div>
+          <Link
+            href="/"
+            className="font-bold text-xl  items-center gap-1 hidden md:flex"
+          >
             {tCommon("appName")}
           </Link>
           <nav className="hidden md:flex gap-6 justify-center">
