@@ -18,11 +18,17 @@ export function MenuDrawer() {
       </DrawerTrigger>
       <DrawerTitle className="hidden">Menu</DrawerTitle>
       <DrawerContent className="min-h-[250px] overflow-auto p-6">
-        {Object.entries(ROUTE_INFOS).map(([key, info]) => (
-          <Link className="text-lg font-medium py-3" key={key} href={info.href}>
-            {tRoute(`${key}.title`)}
-          </Link>
-        ))}
+        {Object.entries(ROUTE_INFOS)
+          .filter(([_, info]) => info.isShowInNav)
+          .map(([key, info]) => (
+            <Link
+              className="text-lg font-medium py-3"
+              key={key}
+              href={info.href}
+            >
+              {tRoute(`${key}.title`)}
+            </Link>
+          ))}
       </DrawerContent>
     </Drawer>
   );
