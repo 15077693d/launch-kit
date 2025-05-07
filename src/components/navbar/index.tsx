@@ -41,21 +41,23 @@ export function Navbar() {
             {tCommon("appName")}
           </Link>
           <nav className="hidden md:flex gap-6 justify-center">
-            {Object.entries(ROUTE_INFOS).map(([key, info]) => {
-              const isActive = pathname === info.href;
-              return (
-                <Link
-                  key={key}
-                  href={info.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive ? "text-foreground" : "text-muted-foreground"
-                  }`}
-                >
-                  {tRoute(`${key}.title`)}
-                </Link>
-              );
-            })}
-          </nav>{" "}
+            {Object.entries(ROUTE_INFOS)
+              .filter(([_, info]) => info.isShowInNav)
+              .map(([key, info]) => {
+                const isActive = pathname === info.href;
+                return (
+                  <Link
+                    key={key}
+                    href={info.href}
+                    className={`text-sm font-medium transition-colors hover:text-primary whitespace-nowrap ${
+                      isActive ? "text-foreground" : "text-muted-foreground"
+                    }`}
+                  >
+                    {tRoute(`${key}.title`)}
+                  </Link>
+                );
+              })}
+          </nav>
           <div className="flex items-center gap-2 justify-end gap-x-2">
             <ThemeToggle />
             <LanguageDropdown />

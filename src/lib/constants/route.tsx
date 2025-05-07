@@ -11,6 +11,7 @@ export const ROUTE_INFOS: Record<
     href: string;
     isProtected: boolean;
     isShowInHome: boolean;
+    isShowInNav: boolean;
   }
 > = {
   [ROUTE_ID.HOME]: {
@@ -19,6 +20,7 @@ export const ROUTE_INFOS: Record<
     href: "/",
     isProtected: false,
     isShowInHome: true,
+    isShowInNav: true,
   },
   [ROUTE_ID.PROTECTED]: {
     icon: undefined,
@@ -26,5 +28,6 @@ export const ROUTE_INFOS: Record<
     href: "/protected",
     isProtected: true,
     isShowInHome: false,
+    isShowInNav: true,
   },
 };
