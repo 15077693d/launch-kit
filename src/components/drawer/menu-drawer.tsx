@@ -19,7 +19,7 @@ export function MenuDrawer() {
       <DrawerTitle className="hidden">Menu</DrawerTitle>
       <DrawerContent className="min-h-[250px] overflow-auto p-6">
         {Object.entries(ROUTE_INFOS)
-          .filter(([_, info]) => info.isShowInNav)
+          .filter(([_, info]) => info.isShowInDrawer)
           .map(([key, info]) => (
             <Link
               className="text-lg font-medium py-3"
