@@ -16,7 +16,8 @@
   "common": {
     "signInRequired": "需要登錄才能繼續",
     "appName": "launch-kit",
-    "loading": "處理中"
+    "loading": "處理中",
+    "cancel": "取消"
   },
   "navigation": {
     "home": "首頁",
