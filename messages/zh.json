@@ -11,7 +11,7 @@
   },
   "banner": {
     "testVersion": "測試版本",
-    "contactEmail": "聯絡我們 at {email}"
+    "contactEmail": "聯絡我們透過 {email}"
   },
   "common": {
     "signInRequired": "需要登錄才能繼續",
