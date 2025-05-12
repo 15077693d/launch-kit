@@ -1,5 +1,7 @@
+import { PostHogProvider } from "@/lib/tools/posthog";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -20,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans bg-background text-foreground min-h-screen">
         {/* Layout UI */}
-        {children}
+        <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>
   );
