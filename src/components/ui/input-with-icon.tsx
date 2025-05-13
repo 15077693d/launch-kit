@@ -30,4 +30,4 @@ function InputWithIcon({ className, type, icon, ...props }: InputProps) {
   );
 }
 
-export { InputWithIcon as Input };
+export { InputWithIcon };
