@@ -1,11 +1,18 @@
 import { PostHogProvider } from "@/lib/tools/posthog";
+import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Nunito } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
+});
+
+const quicksand = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-quicksand",
 });
 
 export const metadata = {
@@ -19,8 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="font-sans bg-background text-foreground min-h-screen">
+    <html
+      lang="en"
+      className={cn(quicksand.variable, inter.variable)}
+      suppressHydrationWarning
+    >
+      <body className="font-quicksand bg-background text-foreground min-h-screen">
         {/* Layout UI */}
         <PostHogProvider>{children}</PostHogProvider>
       </body>
