@@ -21,16 +21,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { LogIn } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-interface LoginDialogProps {
+type LoginDialogProps = {
   open: boolean;
   onSubmitSuccess?: () => Promise<void>;
-  hideCloseButton?: boolean;
   onOpenChange?: (open: boolean) => void;
   redirectTo?: string;
-}
+} & React.ComponentProps<typeof DialogContent>;
 
 // Define the schema for login validation
 const loginSchema = z.object({
@@ -92,7 +92,7 @@ const socialProviders = [
 export function LoginDialog({
   open,
   onSubmitSuccess,
-  hideCloseButton = false,
+  showCloseButton = true,
   onOpenChange,
   redirectTo,
 }: LoginDialogProps) {
@@ -146,7 +146,7 @@ export function LoginDialog({
   };
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent hideCloseButton={hideCloseButton} className="sm:max-w-md">
+      <DialogContent showCloseButton={showCloseButton} className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{t("navigation.signIn")}</DialogTitle>
           <DialogDescription>{t("common.signInRequired")}</DialogDescription>

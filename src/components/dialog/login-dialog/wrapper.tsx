@@ -19,7 +19,7 @@ export function LoginDialogWrapper() {
 
   return (
     <LoginDialog
-      hideCloseButton={dialogs[DialogId.LOGIN].disableClose}
+      showCloseButton={!dialogs[DialogId.LOGIN].disableClose}
       open={dialogs[DialogId.LOGIN].isOpen}
       onSubmitSuccess={handleSuccess}
       onOpenChange={(open) => {

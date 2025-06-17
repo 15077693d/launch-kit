@@ -7,12 +7,12 @@ export default async function ProtectedLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const session = await auth();
-
+  const { locale } = await params;
   if (!session) {
-    redirect({ href: "/sign-in", locale: params.locale });
+    redirect({ href: "/sign-in", locale });
   }
 
   return <>{children}</>;
