@@ -5,7 +5,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "@/i18n/navigation";
-import { ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
+import { type ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";

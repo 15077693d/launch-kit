@@ -4,7 +4,7 @@ import { LanguageDropdown } from "@/components/dropdown/language-dropdown";
 import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
 import { HIDDEN_BANNER_PREFIX, HIDDEN_NAV_PREFIX } from "@/lib/constants";
-import { ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
+import { type ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
 import { useTranslations } from "next-intl";
 import { MenuDrawer } from "../drawer/menu-drawer";
 import RouteLink from "../link/route-link";
