@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { Link, usePathname } from "@/i18n/navigation";
 import { HIDDEN_BANNER_PREFIX, HIDDEN_NAV_PREFIX } from "@/lib/constants";
 import { type ROUTE_ID, ROUTE_INFOS } from "@/lib/constants/route";
+import useIsInstgramBrowser from "@/lib/hooks/useIsInstgramBrowser";
 import { useTranslations } from "next-intl";
 import { MenuDrawer } from "../drawer/menu-drawer";
 import RouteLink from "../link/route-link";
@@ -14,6 +15,7 @@ export function Navbar() {
   const tBanner = useTranslations("banner");
   const tCommon = useTranslations("common");
   const tRoute = useTranslations("route");
+  useIsInstgramBrowser();
   if (HIDDEN_NAV_PREFIX.some((prefix) => pathname.includes(prefix))) {
     return null;
   }
