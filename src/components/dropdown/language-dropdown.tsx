@@ -21,7 +21,9 @@ export function LanguageDropdown() {
     // Navigate to the same page but with a different locale
     router.push(pathname, { locale: newLocale });
   };
-
+  if (Number(locales.length) === 1) {
+    return null;
+  }
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
