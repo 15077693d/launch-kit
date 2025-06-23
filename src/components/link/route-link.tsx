@@ -16,16 +16,19 @@ export default function RouteLink({
   const { status } = useSession();
   const { openDialog } = useDialogStore();
   const info = ROUTE_INFOS[routeId];
-  return status === "authenticated" ? (
+  if (info.isProtected && status !== "authenticated") {
+    return (
+      <button
+        onClick={() => openDialog(DialogId.LOGIN)}
+        className={cn("cursor-pointer text-left", className)}
+      >
+        {children}
+      </button>
+    );
+  }
+  return (
     <Link {...props} href={info.href} className={className}>
       {children}
     </Link>
-  ) : (
-    <button
-      onClick={() => openDialog(DialogId.LOGIN)}
-      className={cn("cursor-pointer text-left", className)}
-    >
-      {children}
-    </button>
   );
 }
