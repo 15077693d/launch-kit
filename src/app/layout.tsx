@@ -15,11 +15,6 @@ const quicksand = Nunito({
   variable: "--font-quicksand",
 });
 
-export const metadata = {
-  title: "launch-kit",
-  description: "launch-kit",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
 export default function RootLayout({
   children,
 }: {

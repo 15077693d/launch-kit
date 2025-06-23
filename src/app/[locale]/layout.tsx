@@ -6,33 +6,25 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { SessionProvider } from "next-auth/react";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
+// 添加動態 metadata
 // 添加動態 metadata
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  // 根據 locale 返回不同的標題和描述
-  const { locale } = await params;
-
-  if (locale === "zh") {
-    return {
-      title: "launch-kit",
-      description: "launch-kit",
-      icons: [{ rel: "icon", url: "/favicon.ico" }],
-    };
-  }
-
   // 默認英文
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
   return {
-    title: "launch-kit",
-    description: "launch-kit",
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
+    title: t("title"),
+    description: t("description"),
   };
 }
 

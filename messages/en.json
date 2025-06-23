@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "launch-kit",
+    "description": "launch-kit"
+  },
   "route": {
     "home": {
       "title": "Home",
