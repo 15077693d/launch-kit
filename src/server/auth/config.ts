@@ -2,7 +2,6 @@ import { db } from "@/server/db";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import DiscordProvider from "next-auth/providers/discord";
 import Google from "next-auth/providers/google";
 
 import {
@@ -48,7 +47,6 @@ const credentialsSchema = z.object({
  */
 export const authConfig = {
   providers: [
-    DiscordProvider,
     Google,
     ...(process.env.VERCEL_ENV === "production"
       ? []
