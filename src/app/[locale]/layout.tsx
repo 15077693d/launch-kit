@@ -1,6 +1,7 @@
 import { LoginDialogWrapper } from "@/components/dialog/login-dialog/wrapper";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
 import { TRPCReactProvider } from "@/trpc/react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -9,7 +10,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
-import { Toaster } from "sonner";
 
 // 添加動態 metadata
 // 添加動態 metadata
