@@ -105,22 +105,7 @@ export const authConfig = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  // if  VERCEL_ENV is production, use the following cookies
-  cookies:
-    process.env.VERCEL_ENV === "preview"
-      ? {
-          sessionToken: {
-            name: "__Secure-next-auth.session-token",
-            options: {
-              httpOnly: true,
-              sameSite: "lax",
-              path: "/",
-              domain: ".launch-kit.com",
-              secure: true,
-            },
-          },
-        }
-      : {},
+
   adapter: DrizzleAdapter(db, {
     usersTable: users,
     accountsTable: accounts,
